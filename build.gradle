@@ -1,4 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// Add buildscript {} before plugins {}
+buildscript {
+    ext {
+        // variables used for dependencies
+        // see Module: Jedi_Archives.app
+        kotlin_version = "1.4.31"
+        apollo_version = "2.5.4"
+        hilt_version = "2.31.2-alpha"
+        hilt_compiler_version = '1.0.0-alpha03'
+        legacy_support_v4_version = '1.0.0'
+        fragment_component_version = "2.3.3"
+    }
+}
+
 plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false
