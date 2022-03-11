@@ -45,8 +45,8 @@ android {
 }
 
 apollo {
-    generateKotlinModels.set(true)
     packageName.set("com.example")
+    generateKotlinModels.set(true)
 }
 
 dependencies {
