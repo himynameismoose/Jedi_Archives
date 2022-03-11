@@ -12,6 +12,11 @@ buildscript {
         legacy_support_v4_version = '1.0.0'
         fragment_component_version = "2.3.3"
     }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
 plugins {
