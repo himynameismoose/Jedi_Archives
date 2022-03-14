@@ -1,3 +1,5 @@
+# This is a query to get all films
+# Title and Director
 query AllFilms {
     allFilms {
         films {
