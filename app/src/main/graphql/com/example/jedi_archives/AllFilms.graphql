@@ -1,8 +1,8 @@
-query AllFilmDirectorsQuery {
+query AllFilms {
     allFilms {
         films {
-            director
             title
+            director
         }
     }
 }
