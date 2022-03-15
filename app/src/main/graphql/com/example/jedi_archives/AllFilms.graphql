@@ -1,8 +1,9 @@
 # This is a query to get all films
-# Title and Director
+# ID, Title and Director
 query AllFilms {
     allFilms {
         films {
+            id
             title
             director
         }
