@@ -1,9 +1,9 @@
 # This is a query to get all films
-# ID, Title and Director
+# episodeID, Title and Director
 query AllFilms {
     allFilms {
         films {
-            id
+            episodeID
             title
             director
         }
