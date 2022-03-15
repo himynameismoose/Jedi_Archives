@@ -32,7 +32,7 @@ class FilmViewModel @Inject constructor(
             _filmsList.postValue(ViewState.Success(response))
         } catch (e: ApolloException) {
             Log.d("ApolloException", "Failure", e)
-            _filmsList.postValue(ViewState.Error("Error fetching characters"))
+            _filmsList.postValue(ViewState.Error("Error fetching films"))
         }
     }
 }
