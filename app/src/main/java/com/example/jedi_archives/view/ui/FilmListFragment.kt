@@ -34,7 +34,7 @@ class FilmListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.charactersRv.adapter = filmAdapter
+        binding.filmsRv.adapter = filmAdapter
         viewModel.queryFilmList()
         observeLiveData()
     }
@@ -43,30 +43,30 @@ class FilmListFragment : Fragment() {
         viewModel.filmList.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is ViewState.Loading -> {
-                    binding.charactersRv.visibility = View.GONE
-                    binding.charactersFetchProgress.visibility = View.VISIBLE
+                    binding.filmsRv.visibility = View.GONE
+                    binding.filmsFetchProgress.visibility = View.VISIBLE
                 }
 
                 is ViewState.Success -> {
                     if (response.value?.data?.allFilms?.films?.size == 0) {
                         filmAdapter.submitList(emptyList())
-                        binding.charactersFetchProgress.visibility = View.GONE
-                        binding.charactersRv.visibility = View.GONE
+                        binding.filmsFetchProgress.visibility = View.GONE
+                        binding.filmsRv.visibility = View.GONE
                         binding.charactersEmptyText.visibility = View.VISIBLE
                     } else {
-                        binding.charactersRv.visibility = View.VISIBLE
+                        binding.filmsRv.visibility = View.VISIBLE
                         binding.charactersEmptyText.visibility = View.GONE
                     }
 
                     val results = response.value?.data?.allFilms?.films
                     filmAdapter.submitList(results)
-                    binding.charactersFetchProgress.visibility = View.GONE
+                    binding.filmsFetchProgress.visibility = View.GONE
                 }
 
                 is ViewState.Error -> {
                     filmAdapter.submitList(emptyList())
-                    binding.charactersFetchProgress.visibility = View.GONE
-                    binding.charactersRv.visibility = View.GONE
+                    binding.filmsFetchProgress.visibility = View.GONE
+                    binding.filmsRv.visibility = View.GONE
                     binding.charactersEmptyText.visibility = View.VISIBLE
                 }
             }
