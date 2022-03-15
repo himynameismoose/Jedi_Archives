@@ -12,7 +12,7 @@ class FilmDiffUtil : DiffUtil.ItemCallback<AllFilmsQuery.Film>() {
         oldItem: AllFilmsQuery.Film,
         newItem: AllFilmsQuery.Film
     ): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.episodeID == newItem.episodeID
     }
 
     override fun areContentsTheSame(
