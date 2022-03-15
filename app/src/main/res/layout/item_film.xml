@@ -7,7 +7,7 @@
 
         <variable
             name="film"
-            type="com.example.jedi_archives.AllFilmsQuery.Film" />
+            type="com.example.jedi_archives.FilmListQuery.Film" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -1,23 +1,28 @@
 package com.example.jedi_archives.view.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.jedi_archives.AllFilmsQuery
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.jedi_archives.FilmListQuery
+import com.example.jedi_archives.databinding.ItemFilmBinding
 
 class FilmAdapter {
 
 }
 
-class FilmDiffUtil : DiffUtil.ItemCallback<AllFilmsQuery.Film>() {
+class FilmViewHolder(val binding: ItemFilmBinding) : RecyclerView.ViewHolder(binding.root)
+
+class FilmDiffUtil : DiffUtil.ItemCallback<FilmListQuery.Film>() {
     override fun areItemsTheSame(
-        oldItem: AllFilmsQuery.Film,
-        newItem: AllFilmsQuery.Film
+        oldItem: FilmListQuery.Film,
+        newItem: FilmListQuery.Film
     ): Boolean {
         return oldItem.episodeID == newItem.episodeID
     }
 
     override fun areContentsTheSame(
-        oldItem: AllFilmsQuery.Film,
-        newItem: AllFilmsQuery.Film
+        oldItem: FilmListQuery.Film,
+        newItem: FilmListQuery.Film
     ): Boolean {
         return oldItem == newItem
     }

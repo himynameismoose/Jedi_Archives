@@ -1,7 +1,7 @@
 package com.example.jedi_archives.repository
 
 import com.apollographql.apollo.api.Response
-import com.example.jedi_archives.AllFilmsQuery
+import com.example.jedi_archives.FilmListQuery
 
 /**
  * This interface will create FilmRepositoryImpl
@@ -12,5 +12,5 @@ import com.example.jedi_archives.AllFilmsQuery
  */
 interface FilmRepository {
 
-    suspend fun queryFilmList(): Response<AllFilmsQuery.Data>
+    suspend fun queryFilmList(): Response<FilmListQuery.Data>
 }

@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.apollographql.apollo.api.Response
 import com.apollographql.apollo.exception.ApolloException
-import com.example.jedi_archives.AllFilmsQuery
+import com.example.jedi_archives.FilmListQuery
 import com.example.jedi_archives.repository.FilmRepository
 import com.example.jedi_archives.view.state.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,8 +22,8 @@ class FilmViewModel @Inject constructor(
 ) : ViewModel() {
 
     // Fields
-    private val _filmList by lazy { MutableLiveData<ViewState<Response<AllFilmsQuery.Data>>>() }
-    val filmList: LiveData<ViewState<Response<AllFilmsQuery.Data>>>
+    private val _filmList by lazy { MutableLiveData<ViewState<Response<FilmListQuery.Data>>>() }
+    val filmList: LiveData<ViewState<Response<FilmListQuery.Data>>>
     get() = _filmList
 
     fun queryFilmList() = viewModelScope.launch{

@@ -1,6 +1,6 @@
 # This is a query to get all films
 # episodeID, Title and Director
-query AllFilms {
+query FilmList {
     allFilms {
         films {
             episodeID
