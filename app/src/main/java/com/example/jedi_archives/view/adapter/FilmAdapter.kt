@@ -7,17 +7,17 @@ class FilmAdapter {
 
 }
 
-class FilmDiffUtil : DiffUtil.ItemCallback<AllFilmsQuery.AllFilms>() {
+class FilmDiffUtil : DiffUtil.ItemCallback<AllFilmsQuery.Film>() {
     override fun areItemsTheSame(
-        oldItem: AllFilmsQuery.AllFilms,
-        newItem: AllFilmsQuery.AllFilms
+        oldItem: AllFilmsQuery.Film,
+        newItem: AllFilmsQuery.Film
     ): Boolean {
-        return oldItem.__typename == newItem.__typename
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(
-        oldItem: AllFilmsQuery.AllFilms,
-        newItem: AllFilmsQuery.AllFilms
+        oldItem: AllFilmsQuery.Film,
+        newItem: AllFilmsQuery.Film
     ): Boolean {
         return oldItem == newItem
     }
